@@ -14,7 +14,7 @@ if( isset($_POST['bt_pes_gravidades']) ){
 
 if ($result->num_rows > 0) {
 ?>
-    <center><h3>LISTAGEM DE TIPOS(<a href="form_insert_gravidade.php">+</a>)</h3></center><br/>
+    <center><h3>LISTAGEM DE GRAVIDADES(<a href="form_insert_gravidade.php">+</a>)</h3></center><br/>
  
     <form action="list_gravidade.php" method="post">
         <div class="form-group">
