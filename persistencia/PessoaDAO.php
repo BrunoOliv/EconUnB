@@ -4,9 +4,14 @@ require_once 'GerenteDeConexao.php';
 class PessoaDAO {
 
     public static function pesquisa($palavra, $assunto){
+        if($assunto == "id_login"){
+            $assunto = "p.id_login";
+        }
         $gc = new GerenteDeConexao;
         $conn = $gc->conectar();
-        $sql = "select * from pessoa where {$assunto}='{$palavra}'";
+        $sql = "select * from pessoa as p 
+                inner join login as l on p.id_login = l.id_login  
+                where {$assunto}='{$palavra}'";
         $result = $conn->query($sql);
         
         $conn->close();
